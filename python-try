@@ -1,0 +1,56 @@
+print('cnm')
+
+100+200
+
+命令行 cd 到储存.py文件的路径,python filename.py可以打开
+
+>>>是python的交互式环境，退出用ctrl+c
+
+>>> print('100+200=',100+200)    
+100+200= 300
+
+>>> name=input()
+Darius
+>>> print('hello',name)
+hello Darius
+>>> name=input('please fuck yourself:')  提示
+please fuck yourself:cnm
+>>> print('hello',name)
+hello cnm
+
+>>> print('1024 * 768 =',1024*768)
+1024 * 768 = 786432
+
+字符\本身也要转义，所以\\表示的字符就是\
+\n 转行  \t 制表符
+用r''表示''内部的字符串默认不转义
+>>> print(r'\\','fuck')
+\\ fuck
+
+>>> True or False
+True
+>>> True and False
+False
+>>> not True
+False   布尔值
+
+>>> print('s2 =',"'hello,'",r"\'Adam\''")
+s2 = 'hello, \'Adam\''   里面有单引号，这里r外面就用双引号
+>>> print('s2 =',"r'hello,",'\"Bart\"\'')
+s2 = r'hello, "Bart"'
+
+ASCII，127个，一字节有8个比特，Unicode，2个字节，UTF-8，可变长编码，英文字母：1字节，汉字：3字节
+字符
+字节 byte
+
+格式化
+>>> '%s, you are a %s!' %('ab','cd')
+'ab, you are a cd!'
+%s: 字符串   %d:整数  %f:浮点数   %x:16进制整数
+>>> 'you are %d years old' %(18)
+'you are 18 years old'  
+
+s1 = 72
+s2 = 85
+r=(s2-s1)/s1*100;
+print('raise percent is %.1f %%' % (r))    直接加百分号，一个内容括号可以省略；%.1表示保留一位小数
