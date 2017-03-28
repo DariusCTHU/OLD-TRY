@@ -4,10 +4,10 @@ print('cnm')
 
 命令行 cd 到储存.py文件的路径,python filename.py可以打开
 
->>>是python的交互式环境，退出用ctrl+c
+>>>是python的交互式环境，退出用ctrl+cd
 
->>> print('100+200=',100+200)    
-100+200= 300
+>>> print('100+200=',100+200)     
+100+200= 300                         print出来的东西是没有‘’的
 
 >>> name=input()
 Darius
@@ -54,3 +54,30 @@ s1 = 72
 s2 = 85
 r=(s2-s1)/s1*100;
 print('raise percent is %.1f %%' % (r))    直接加百分号，一个内容括号可以省略；%.1表示保留一位小数
+
+我王老五时隔一星期终于回来了
+
+列表  list  都是[]方括号
+
+>>> fruits=['apple','pen','pineapple']
+>>> fruits
+['apple', 'pen', 'pineapple']
+>>> len(fruits)
+3
+fruits[2]
+'pineapple'
+0：第一个元素   -1：最后一个元素
+注意list是可变的列表，可以：
+添加：append
+插入：insert（1，'aaa'）（在索引位置为1的地方插入）
+删除：pop或者pop(i)
+赋值：fruits[2]='aaa'
+
+
+list里面可以是任何东西，也包括另一个list，此时调用最里面的元素采用s[1][2]，表示s里的1号位的列表的2号位的元素
+
+另一种列表 tuple  是不可变的！安全的！
+不可变的意思是里面指向的东西不可变，如果里面的元素是个list，list里面的东西是可以改变的
+
+classmates = ('Michael', 'Bob', 'Tracy')   都是（）圆括号
+
