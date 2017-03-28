@@ -3,8 +3,7 @@ print('cnm')
 100+200
 
 命令行 cd 到储存.py文件的路径,python filename.py可以打开
-
->>>是python的交互式环境，退出用ctrl+cd
+>>>是python的交互式环境，退出用ctrl+c
 
 >>> print('100+200=',100+200)     
 100+200= 300                         print出来的东西是没有‘’的
