@@ -8,7 +8,7 @@ print('cnm')
 >>> print('100+200=',100+200)     
 100+200= 300                         print出来的东西是没有‘’的
 
->>> name=input()
+>>> name=input()                      input获得的是字符串！！！
 Darius
 >>> print('hello',name)
 hello Darius
@@ -127,3 +127,34 @@ set 无序不重复元素的集合，意义不明
 >>> s = set([1, 1, 2, 2, 3, 3])
 >>> s
 {1, 2, 3}   将一个list赋给set
+
+函数：
+
+调用函数：abs(-1)，int('123')，bool(1)，str(123)
+函数名 a=abs
+a(-1)
+
+def aaa(x):
+	if x > 0:
+		return x
+	else:
+		return -x
+
+a=input('aa:',)
+x=int(a)
+print(aaa(x))    这里用4个空格就报错，用tab就没问题，感觉很奇怪
+在Python中，定义一个函数要使用def语句，依次写出函数名、括号、括号中的参数和冒号:，然后，在缩进块中编写函数体，函数的返回值用return语句返回。
+空函数：def(...):
+           pass  （占位符）
+如果要返回多个值：实际返回了一个tuple
+import math 导入math包
+import math
+def quadratic(a,b,c):
+	d=b**2-4*a*c
+	if d >= 0:
+		x1=(-b+math.sqrt(d))/(2*a)
+		x2=(-b-math.sqrt(d))/(2*a)
+		print('the answer is:',x1,x2)
+	else:
+		print('no')      不用return直接写出结果就完事了
+           
