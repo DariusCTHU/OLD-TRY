@@ -1,0 +1,62 @@
+KNN自己写的算法
+
+from numpy import *
+import operator
+
+def createDataSet():
+	group = array([[1,1],[1.1,1],[0,0],[0,0.1]])
+	labels = ['A','A','B','B']
+	return group,labels
+
+def classify0(inX, dataSet, labels, k):
+	(m,n) = dataSet.shape
+	inXX = tile(inX, [m,1])
+	diff = dataSet - inXX
+	sqDiff = diff ** 2
+	sumSqDiff = sqDiff.sum(axis=1)
+	indexSmallToLarge = argsort(sumSqDiff)
+	indexK = indexSmallToLarge[:k]
+	for i in range(k):
+		labelK[i] = labels[indexK[i]]
+	labelKList = labelK.tolist()
+
+	maxCount = 0
+
+	for i in range(0,k):
+		numberLabel = labelKList.count(labelKList[i])
+		if numberLabel > maxCount:
+			maxCount = numberLabel
+			answ = labelK[i]
+
+	return answ
+
+书上的标准算法
+from numpy import *
+import operator
+
+def createDataSet():
+	group = array([[1, 1.1], [1, 1], [0, 0], [0, 0.1]])
+	labels = ['A', 'A', 'B', 'B']
+	return group, labels
+
+def classify0(inX, dataSet, labels, k):
+	dataSetSize = dataSet.shape[0]
+	diffMat = tile(inX, (dataSetSize, 1)) - dataSet
+	sqDiffMat = diffMat ** 2
+	sqDistances = sqDiffMat.sum(axis=1)
+	distances = sqDistances ** 0.5
+	sortedDistIndicies = distances.argsort()
+	classCount = {}
+	for i in range(k):
+		voteIlabel = labels[sortedDistIndicies[i]]
+		classCount[voteIlabel] = classCount.get(voteIlabel,0) + 1
+	sortedClassCount = sorted(classCount.iteritems(), 
+		key = operator.itemgetter(1), reverse=True)
+	return sortedClassCount[0][0]
+  
+注意到有以下几点：（自己的算法有bug，不想改了，妈呀）
+·思路都是计算difference，进行排序，返回索引值，找到label，返回最多次数的label
+·dataSet.shape[0] 行数 [1] 列数
+·tile函数用于扩展，如tile(inX,[3,1])    reshape是变形，变化后的矩阵元素个数和原矩阵一致
+·sq.sum(axis=1)按行求和 axis=0按列求和
+·distances.argsort() 按从小到大排列，并返回索引值，因此返回矩阵是index矩阵
